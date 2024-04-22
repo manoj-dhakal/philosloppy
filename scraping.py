@@ -86,35 +86,50 @@ def scrape_conversation(text):
 
     return instructions, outputs
 
-# with open('text.txt', 'r', encoding='utf-8') as file:
-#     book_content = file.readlines()
+urls = {'Theaetetus':'https://www.gutenberg.org/cache/epub/1726/pg1726-images.html', 
+       'PHAEDRUS': 'https://www.gutenberg.org/cache/epub/1636/pg1636-images.html',
+       'GORGIAS': 'https://www.gutenberg.org/cache/epub/1672/pg1672-images.html',
+       'LAWS': 'https://www.gutenberg.org/cache/epub/1750/pg1750-images.html',
+       'PHAEDO': 'https://www.gutenberg.org/cache/epub/1658/pg1658-images.html',
+        'TIMAEUS': 'https://www.gutenberg.org/cache/epub/1572/pg1572-images.html',
+        'EUTHYPHRO': 'https://www.gutenberg.org/cache/epub/1642/pg1642-images.html',
+        'MENO': 'https://gutenberg.org/cache/epub/1643/pg1643-images.html',
+        'ION': 'https://www.gutenberg.org/cache/epub/1635/pg1635-images.html',}
 
-url = 'https://www.gutenberg.org/cache/epub/1726/pg1726-images.html'
-book_content = fetch_book_content(url)
+if __name__ == "__main__":
+    columns = ['Instructions', 'Outputs']
+    df = pd.DataFrame(columns=columns)
 
-if book_content == None:
-    print("Nothing returned from the website Exiting the program.")
-    exit()
+    for name, link in urls.items():
+        print("Reading book:", name)
+        book_content = fetch_book_content(link)
+        print("Extracting conversation from book...")
+        
+        if book_content == None:
+            print("Nothing returned from the website Exiting the program.")
+            exit()
 
-# Specify the start and end keywords
-start_keyword = 'PERSONS OF THE DIALOGUE:'
-end_keyword = '*** END OF THE PROJECT'
+        # Specify the start and end keywords
+        start_keyword = 'PERSONS OF THE DIALOGUE:'
+        end_keyword = '*** END OF THE PROJECT'
 
-# Extract text between the specified start and end points
-extracted_text = extract_text(book_content, start_keyword, end_keyword)
+        # Extract text between the specified start and end points
+        extracted_text = extract_text(book_content, start_keyword, end_keyword)
 
-# # Print the extracted text
-# print(extracted_text)
+        instructions, outputs = scrape_conversation(extracted_text)
+        if len(instructions) != len(outputs):
+            if len(instructions) > len(outputs):
+                instructions = instructions[:len(outputs)]
+            else:
+                outputs = outputs[:len(instructions)]
 
-instructions, outputs = scrape_conversation(extracted_text)
+        data = {
+            "Instructions": instructions,
+            "Outputs": outputs
+        }
 
-data = {
-    "Instructions": instructions,
-    "Outputs": outputs
-}
-
-
-df = pd.DataFrame.from_dict(data)
-table = pa.Table.from_pandas(df)
-pq.write_table(table, 'conversation.parquet')
+        df = df.append(pd.DataFrame(data), ignore_index=True)
+        
+    table = pa.Table.from_pandas(df)
+    pq.write_table(table, 'conversation.parquet')
 
