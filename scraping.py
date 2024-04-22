@@ -94,7 +94,14 @@ urls = {'Theaetetus':'https://www.gutenberg.org/cache/epub/1726/pg1726-images.ht
         'TIMAEUS': 'https://www.gutenberg.org/cache/epub/1572/pg1572-images.html',
         'EUTHYPHRO': 'https://www.gutenberg.org/cache/epub/1642/pg1642-images.html',
         'MENO': 'https://gutenberg.org/cache/epub/1643/pg1643-images.html',
-        'ION': 'https://www.gutenberg.org/cache/epub/1635/pg1635-images.html',}
+        'ION': 'https://www.gutenberg.org/cache/epub/1635/pg1635-images.html',
+        # New addition
+        'CRATYLUS': 'https://www.gutenberg.org/cache/epub/1616/pg1616-images.html',
+        'MENEXENUS': 'https://www.gutenberg.org/cache/epub/1682/pg1682-images.html',
+        'PHILEBUS': 'https://www.gutenberg.org/cache/epub/1744/pg1744-images.html',
+        'EUTHYDEMUS': 'https://www.gutenberg.org/cache/epub/1598/pg1598-images.html',
+        'LACHES': 'https://www.gutenberg.org/cache/epub/1584/pg1584-images.html',
+        }
 
 if __name__ == "__main__":
     columns = ['Instructions', 'Outputs']
