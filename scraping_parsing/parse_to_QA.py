@@ -123,7 +123,6 @@ split_overlap = 100
 
 # In[2]:
 
-
 import os
 
 class TextFileLoader:
@@ -132,16 +131,17 @@ class TextFileLoader:
     
     def load(self):
         documents = []
-        for filename in os.listdir(self.directory):
-            if filename.endswith(".txt"):
-                file_path = os.path.join(self.directory, filename)
-                with open(file_path, 'r', encoding='utf-8') as file:
-                    text = file.read()
-                    documents.append({"text": text})
+        for root, dirs, files in os.walk(self.directory):
+            for filename in files:
+                if filename.endswith(".txt"):
+                    file_path = os.path.join(root, filename)
+                    with open(file_path, 'r', encoding='utf-8') as file:
+                        text = file.read()
+                        documents.append({"text": text})
         return documents
 
 # Define the path to the data directory
-data_path = "articles_text/SEP/"
+data_path = "articles_text/"
 
 # Set up the TextFileLoader to load .txt files
 loader = TextFileLoader(data_path)
