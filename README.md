@@ -27,7 +27,7 @@ Now, you can access our models directly from Ollama! 🎉
 3.	Run the general philosophy model (“philoslopper”):
 ```bash
 ollama run philosloppy/philoslopper
-    ```
+```
 5.	
 
 Credits
