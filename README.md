@@ -29,9 +29,9 @@ Now, you can access our models directly from Ollama! 🎉
 ollama run philosloppy/philoslopper
 ```
 
-##Credits
+## Credits
 
-PhiloSloppy is brought to you with love by two passionate philosophy and AI lovers, Ashok Timsina (https://github.com/timsinashok) and Manoj Dhakal (https://github.com/manoj-dhakal. Join us on this whimsical journey as we unravel the mysteries of philosophy, one conversation at a time! 🎩🌹
+PhiloSloppy is brought to you with love by two passionate philosophy and AI lovers, Ashok Timsina (https://github.com/timsinashok) and Manoj Dhakal (https://github.com/manoj-dhakal). Join us on this whimsical journey as we unravel the mysteries of philosophy, one conversation at a time! 🎩🌹
 
 Let’s Chat!
 
