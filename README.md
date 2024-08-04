@@ -4,24 +4,40 @@ Welcome to PhiloSloppy, where we delve into philosophical conversations with fin
 
 ## Overview
 
-PhiloSloppy is a charming project dedicated to refining a cutting-edge LLM model for engaging philosophical dialogues. Our journey involves three delightful phases:
+PhiloSloppy is a charming project dedicated to refining cutting-edge LLM models for engaging philosophical dialogues. Our journey involves three delightful phases:
 
-1) **Data Collection:** 📚 Dive into the enchanting world of Plato's dialogues! 🏛️ Our dataset, stored in Hugging Face, features Plato's timeless texts meticulously converted into .parquet format, ready for exploration.
+1) **Data Collection:** 📚 Dive into the enchanting world of Plato's dialogues for the "shockrates" model, and explore texts from the Stanford Encyclopedia of Philosophy and the Internet Encyclopedia of Philosophy for the "philoslopper" model. 🏛️✨ Our datasets, stored in Hugging Face, feature meticulously converted texts into .parquet format, ready for exploration.
 
-2) **Fine Tuning:** ✨ Embark on a quest to fine-tune Mistral AI's marvelous Mistral-7B-Instruct-v0.2 model, boasting a whopping 7 billion parameters! 🚀 Witness our model blossom into a conversational virtuoso, all set for philosophical ponderings.
+2) **Fine Tuning:** ✨ Embark on a quest to fine-tune the "unsloth/llama-3-8b-Instruct-bnb-4bit" model using Llama 3 and Unsloth. 🚀 Witness our models blossom into conversational virtuosos, ready for philosophical ponderings.
 
-3) **Deployment:** 🌐 Watch as our refined model gracefully takes its place on the digital stage! Accessible via a serverless API, our model eagerly awaits to engage in spirited discussions, easily accessible with a simple python command.
+3) **Deployment:** 🌐 Watch as our refined models gracefully take their places on the digital stage! Accessible via a serverless API, our models eagerly await to engage in spirited discussions, easily accessible with simple commands.
 
 ## Usage
 
-🚧 *Under construction* 🚧 Stay tuned as we craft an effortless user experience for accessing our model! ✨
+Now, you can access our models directly from Ollama! 🎉
 
-### Credits
+1. **Start the Ollama server:**
+   ```bash
+   ollama serve
+   ```
+2.	Run the Socrates model (“shockrates”):
+ ```bash
+   ollama run philosloppy/shockrates
+   ```
+3.	Run the general philosophy model (“philoslopper”):
+	  ```bash
+  	ollama run philosloppy/shockrates
+    ```
+5.	
 
-PhiloSloppy is brought to you with love by our passionate team of philosophers and AI enthusiasts. Join us on this whimsical journey as we unravel the mysteries of philosophy, one conversation at a time! 🎩🌹
+Credits
 
-### Let's Chat!
+PhiloSloppy is brought to you with love by two passionate philosophy and AI lovers, Ashok Timsina (https://github.com/timsinashok) and Manoj Dhakal (https://github.com/manoj-dhakal. Join us on this whimsical journey as we unravel the mysteries of philosophy, one conversation at a time! 🎩🌹
 
-Got questions, suggestions, or just want to say hello? Reach out to us! We're always excited to connect with fellow thinkers and dreamers. 💌
+Let’s Chat!
+
+Got questions, suggestions, or just want to say hello? Reach out to us! We’re always excited to connect with fellow thinkers and dreamers. 💌
+
+Visit our Ollama profile: [PhiloSloppy on Ollama](https://ollama.com/philosloppy)
 
 Happy philosophizing! 🌟📜
