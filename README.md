@@ -10,7 +10,7 @@ PhiloSloppy is a charming project dedicated to refining cutting-edge LLM models 
 
 2) **Fine Tuning:** ✨ Embark on a quest to fine-tune the "unsloth/llama-3-8b-Instruct-bnb-4bit" model using Llama 3 and Unsloth. 🚀 Witness our models blossom into conversational virtuosos, ready for philosophical ponderings.
 
-3) **Deployment:** 🌐 Watch as our refined models gracefully take their places on the digital stage! Accessible via a serverless API, our models eagerly await to engage in spirited discussions, easily accessible with simple commands.
+3) **Deployment:** 🌐 Watch as our refined models gracefully take their places on the digital stage! Currently accessible on local machines using Ollama and soon accessible via a serverless API, our models eagerly await to engage in spirited discussions, easily accessible with simple commands.
 
 ## Usage
 
@@ -26,7 +26,7 @@ Now, you can access our models directly from Ollama! 🎉
    ```
 3.	Run the general philosophy model (“philoslopper”):
 	  ```bash
-  	ollama run philosloppy/shockrates
+  ollama run philosloppy/philoslopper
     ```
 5.	
 
